@@ -1,7 +1,7 @@
 package cool.javaee.cdi.events;
 
-import cool.javaee.cdi.events.listeners.MessageSaver;
-import cool.javaee.cdi.events.listeners.qualifiers.Important;
+import cool.javaee.cdi.events.database.MessageSaver;
+import cool.javaee.cdi.events.observers.qualifiers.Important;
 import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Event;
@@ -61,6 +61,11 @@ public class EventViewBean implements Serializable {
 
     }
 
+    /**
+     *
+     * @param message Persists a message into database. Inside the
+     * saveMessageToDatabase method, an event is fired.
+     */
     public void sendMessageToTransactionEvent(String message) {
         messageSaver.saveMessageToDatabase(message);
     }

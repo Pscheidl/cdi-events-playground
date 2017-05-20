@@ -1,4 +1,4 @@
-package cool.javaee.cdi.events.listeners.entities;
+package cool.javaee.cdi.events.observers.entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
+ * A database entity serves as a wrapper for the message to be persisted into
+ * database.
  *
  * @author Pavel Pscheidl <pavel.junior@pscheidl.cz>
  */

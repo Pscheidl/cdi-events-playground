@@ -1,7 +1,7 @@
-package cool.javaee.cdi.events.listeners;
+package cool.javaee.cdi.events.database;
 
-import cool.javaee.cdi.events.listeners.entities.Message;
-import cool.javaee.cdi.events.listeners.qualifiers.Transaction;
+import cool.javaee.cdi.events.observers.entities.Message;
+import cool.javaee.cdi.events.observers.qualifiers.Transaction;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;

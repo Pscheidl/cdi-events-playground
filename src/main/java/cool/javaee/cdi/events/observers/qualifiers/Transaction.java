@@ -1,4 +1,9 @@
-package cool.javaee.cdi.events.listeners.qualifiers;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cool.javaee.cdi.events.observers.qualifiers;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
@@ -10,11 +15,12 @@ import java.lang.annotation.Target;
 import javax.inject.Qualifier;
 
 /**
+ * A qualifier for messages fired during a transaction.
  *
  * @author Pavel Pscheidl <pavel.junior@pscheidl.cz>
  */
 @Qualifier
 @Retention(RUNTIME)
 @Target({METHOD, FIELD, PARAMETER, TYPE})
-public @interface Important {
+public @interface Transaction {
 }
