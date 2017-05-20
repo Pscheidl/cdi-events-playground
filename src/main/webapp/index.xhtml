@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Events playground</title>
+        <ui:include src="WEB-INF/bootstrap.xhtml"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="page-header">
+                <h1><div style="color: #5382A1;  display: inline-block;">Java</div> <div style="color: #F89820;  display: inline-block;">EE</div> CDI events</h1>
+            </div>
+
+            <div class="row">
+                <!-- Invokes method firing simple unqualified messages.-->
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Simple message event</div>
+                        <div class="panel-body">
+                            <h:form>
+                                <h:inputText id="simpleMessage" binding="#{simpleMessage}" value="Simple message..."/>
+                                <h:commandButton value="Fire event" action="#{eventViewBean.sendSimpleMessage(simpleMessage.value)}"/>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Invokes method firing only messages qualified as important-->
+                <div class="col-md-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Secret message event</div>
+                        <div class="panel-body">
+                            <h:form>
+                                <h:inputText id="qualifiedMessage" binding="#{importantMessage}" value="Important message..."/>
+                                <h:commandButton value="Fire event" action="#{eventViewBean.sendImportantMessage(importantMessage.value)}"/>
+                            </h:form>
+                        </div>
+                    </div></div>
+            </div>
+
+            <div class="row">
+                <!-- Invokes method which fires the important message event alternatively -->
+                <div class="col-md-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Alternative qualifier selection</div>
+                        <div class="panel-body">
+                            <h:form>
+                                <h:inputText id="alternativeMessage" binding="#{alternativeMessage}" value="Important alternative ..."/>
+                                <h:commandButton value="Fire event" action="#{eventViewBean.sendImportantMessageAlternatively(alternativeMessage.value)}"/>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Transaction-bound event</div>
+                        <div class="panel-body">
+                            <h:form>
+                                <h:inputText id="afterTransactionMessage" binding="#{afterTransactionMessage}" value="After transaction ..."/>
+                                <h:commandButton value="Fire event" action="#{eventViewBean.sendMessageToTransactionEvent(afterTransactionMessage.value)}"/>
+                            </h:form>
+                        </div>
+                    </div></div>
+            </div>
+
+
+        </div>
+    </h:body>
+</html>
+
