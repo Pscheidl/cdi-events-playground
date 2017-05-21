@@ -2,6 +2,7 @@ package cool.javaee.cdi.events.observers;
 
 import cool.javaee.cdi.events.observers.qualifiers.Important;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.event.Observes;
 import javax.inject.Named;
 
 /**
@@ -18,7 +19,7 @@ public class ImportantEventObserver {
      *
      * @param importantMessage Important message
      */
-    public void observeSecretMessage(@Important String importantMessage) {
+    public void observeSecretMessage(@Observes @Important String importantMessage) {
         System.out.println("Important message received: " + importantMessage);
     }
 
