@@ -4,8 +4,8 @@
 
 1. Git clone the repository
 1. Run *Maven goal* `wildfly-swarm:run`
+1. Visit http://localhost:8080/ in your browser
 
-**Done !** WildFly Swarm will scan the project and automatically download all the parts necessary to run the application. No interaction required. The download phase only occurs during the first run.
+**Done !** WildFly Swarm will scan the project and automatically download all the parts necessary to run the application. No interaction required. The download phase only occurs during the first run. During the process, an in-memory H2 database is started.
 
-
-
+![test](application.png "test")
