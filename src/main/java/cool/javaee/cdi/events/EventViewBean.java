@@ -28,20 +28,22 @@ public class EventViewBean implements Serializable {
     private MessageSaver messageSaver;
 
     /**
+     * Fires simple event with the message received from the website frontend.
+     * Event listeners without any additional qualifiers will receive this
+     * event.
      *
-     * @param message Fires simple event with the message received from the
-     * website frontend. Event listeners without any additional qualifiers will
-     * receive this event.
+     * @param message Message to send
      */
     public void sendSimpleMessage(String message) {
         simpleMessageEvent.fire(message);
     }
 
     /**
+     * Fires simple event with the message received from the website frontend.
+     * Event listeners without any additional qualifiers will receive this
+     * event.
      *
-     * @param message Fires simple event with the message received from the
-     * website frontend. Event listeners without any additional qualifiers will
-     * receive this event.
+     * @param messageMessage to send
      */
     public void sendImportantMessage(String message) {
         importantMessageEvent.fire(message);
@@ -49,10 +51,11 @@ public class EventViewBean implements Serializable {
     }
 
     /**
+     * Fires simple event with the message received from the website frontend.
+     * Event listeners without any additional qualifiers will receive this
+     * event.
      *
-     * @param message Fires simple event with the message received from the
-     * website frontend. Event listeners without any additional qualifiers will
-     * receive this event.
+     * @param message Message to send
      */
     public void sendImportantMessageAlternatively(String message) {
         simpleMessageEvent.select(new AnnotationLiteral<Important>() {
@@ -62,9 +65,10 @@ public class EventViewBean implements Serializable {
     }
 
     /**
+     * Persists a message into database. Inside the saveMessageToDatabase
+     * method, an event is fired.
      *
-     * @param message Persists a message into database. Inside the
-     * saveMessageToDatabase method, an event is fired.
+     * @param message Message to send
      */
     public void sendMessageToTransactionEvent(String message) {
         messageSaver.saveMessageToDatabase(message);
