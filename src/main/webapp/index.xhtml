@@ -58,14 +58,14 @@
                         <div class="panel-heading">Transaction-bound event</div>
                         <div class="panel-body">
                             <h:form>
-                                <h:inputText id="afterTransactionMessage" binding="#{afterTransactionMessage}" value="After transaction ..."/>
+                                <h:inputText id="afterTransactionMessage" binding="#{afterTransactionMessage}" value="Transaction message ..."/>
                                 <h:commandButton value="Fire event" action="#{eventViewBean.sendMessageToTransactionEvent(afterTransactionMessage.value)}"/>
                             </h:form>
                         </div>
                     </div></div>
             </div>
 
-
+            Event messages will appear in the console ...
         </div>
     </h:body>
 </html>
