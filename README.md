@@ -1,4 +1,5 @@
 # CDI Events Playground
+Sample project for [CDI Events overview](http://www.pavel.cool/javaee/cdi-events/) article.
 
 ## Running it
 
