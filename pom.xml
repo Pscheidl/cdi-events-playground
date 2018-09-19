@@ -10,7 +10,7 @@
     <name>cdi-events-sample</name>
 
     <properties>
-        <version.wildfly.swarm>2017.5.0</version.wildfly.swarm>
+        <version.wildfly.swarm>2018.5.0</version.wildfly.swarm>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -36,6 +36,12 @@
                 <groupId>org.wildfly.swarm</groupId>
                 <artifactId>wildfly-swarm-plugin</artifactId>
                 <version>${version.wildfly.swarm}</version>
+                <configuration>
+                    <properties>
+                        <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
+                    </properties>
+                    <useUberJar>true</useUberJar>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
